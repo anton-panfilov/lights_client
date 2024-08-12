@@ -7,4 +7,4 @@ This client can
 
 ![alt schematic](fritzing/main_bb.svg)
 
-https://github.com/anton-panfilov/lights_client/blob/main/src/RGB_Simple_Driver.ino
+https://github.com/anton-panfilov/lights_client/blob/main/src/RGB_Simple_Driver.ino#L1-L72
