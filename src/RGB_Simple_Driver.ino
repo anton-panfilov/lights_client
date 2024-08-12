@@ -3,13 +3,22 @@
 #include "RGBClientAPI.cpp"
 #include "WifiCredentials.cpp"
 
-#define SERVER_HOST "lights-control-server.leaptheorytech.com"
-#define SERVER_PORT 80
+/////////////////////////////////////////////////////////////////////
+// settings
+
 #define DATA_PIN 3
 #define CLOCK_PIN 13
 #define RESET_WIFI_CREDENTIALS_PIN 2
+
+#define SERVER_HOST "lights-control-server.leaptheorytech.com"
+#define SERVER_PORT 80
+
 #define TURN_OFF_AFTER_X_WIFI_ERRORS 5
 #define TURN_OFF_AFTER_X_SERVER_ERRORS 10
+
+
+//////////////////////////////////////////////////////////////////
+// allocate memory
 
 WiFiCredentials wifiCredentials(RESET_WIFI_CREDENTIALS_PIN);
 WiFiClient wifi;
@@ -26,11 +35,19 @@ int wifi_status = WL_IDLE_STATUS;
 int wifi_errors_count = 0;
 int server_errors_count = 0;
 
+
+//////////////////////////////////////////////////////////////////
+// functions
+
 void ledTurnOff() {
   leds[0] = CRGB::Black;
   FastLED.show();
   Serial.println("turn off the led strip");
 }
+
+
+//////////////////////////////////////////////////////////////////
+// setup
 
 void setup() {
   Serial.begin(9600);
@@ -38,6 +55,9 @@ void setup() {
   FastLED.addLeds<P9813, DATA_PIN, CLOCK_PIN, RGB>(leds, 1);
   ledTurnOff();
 }
+
+//////////////////////////////////////////////////////////////////
+// loop
 
 void loop() {
   if(wifi_status != WL_CONNECTED){
