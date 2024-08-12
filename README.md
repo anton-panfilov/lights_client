@@ -6,7 +6,3 @@ This client can
 - set the color received from the server on the loop
 
 ![alt schematic](fritzing/main_bb.svg)
-
-
-<!-- MARKDOWN-AUTO-DOCS:START (CODE:src=./src/RGB_Simple_Driver.ino) -->
-<!-- MARKDOWN-AUTO-DOCS:END -->
