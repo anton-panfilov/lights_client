@@ -1,6 +1,15 @@
 #include <ArduinoHttpClient.h>
 #include <ArduinoJson.h>
-#include "WiFiS3.h"
+
+#if defined(ARDUINO_AVR_UNO)
+  #include <WiFiS3.h> // WiFi library for Arduino Uno WiFi
+#elif defined(ESP32)
+  #include <WiFi.h> // WiFi library for ESP32
+#elif defined(ARDUINO_SAMD_NANO_33_IOT)
+  #include <WiFiNINA.h>
+#else
+  #error "Unsupported board selected!"
+#endif
 
 class RGBColor {
   public:
