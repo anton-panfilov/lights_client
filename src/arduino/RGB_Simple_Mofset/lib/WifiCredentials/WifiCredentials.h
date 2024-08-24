@@ -37,7 +37,7 @@ private:
     void promptForCredentials(char* reason);
 };
 
-#include "Begin/ResetButtonOnStart.cpp"
+#include "Begin/ConsoleAvaliableOnStart.cpp"
 #include "PromptForCredentials/USBConsole.cpp"
 
 // different persistent storages implementations for get/set SSID/Password
