@@ -11,3 +11,6 @@ This code works with ESP32 and SAMD
 
 ### Scheme
 ![alt schematic](fritzing/nano_wifi_bb.svg)
+
+### Box
+![alt 3d model](3d/RGB.3mf)
